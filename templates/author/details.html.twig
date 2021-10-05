@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Details Author{% endblock %}
+
+{% block body %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">authorId</th>
+            <th scope="col">cote</th>
+            <th scope="col">title</th>
+            <th scope="col">release</th>
+            <th scope="col">type</th>
+            <th scope="col">synopsis</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for key, value in authors.books %}
+            <tr>
+                <th scope="row">{{ value.id }}</th>
+                <td>{{ value.authorId.id }}</td>
+                <td>{{ value.cote }}</td>
+                <td>{{ value.title }}</td>
+                <td>{{ value.releaseYear }}</td>
+                <td>{{ value.type }}</td>
+                <td>{{ value.synopsis }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
